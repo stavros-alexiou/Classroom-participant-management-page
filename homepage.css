@@ -1,0 +1,5 @@
+.raise-hand::after {
+    content: "🔔"; /* Notification mark */
+    margin-left: 5px; /* Adjust spacing as needed */
+    color: red; /* Color of the notification mark */
+}

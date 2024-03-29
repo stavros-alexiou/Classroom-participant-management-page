@@ -26,7 +26,6 @@ if(isset($_SESSION['email'])) {
         // Update 'raise_hand' flag to the new value
         $update_sql = "UPDATE users SET raise_hand = $new_raise_hand_value WHERE email = '$email'";
         if ($conn->query($update_sql) === TRUE) {
-            echo "Hand state toggled successfully.";
         } else {
             echo "Error updating record: " . $conn->error;
         }

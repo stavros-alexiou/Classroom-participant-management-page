@@ -1,18 +1,67 @@
-<!-- homepage.html -->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="homepage.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <!-- Include jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Εκπαιδευτής</title>
+    <link rel="stylesheet" href="homepage.css">
+    <script src="jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>Welcome to the Homepage</h1>
-    <div id="logged-in-users"></div>
-    <button id="disconnect-btn">Disconnect</button>
+<script>
+var delay=1000;
+function showContent(){
+    document.body.style.display='block';  
+}
+setTimeout(showContent, delay);
+
+// Function to check if the user is logged in
+function checkLogin() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText.trim() === 'adminloggedin') {
+                // Admin is logged in
+            } else if (this.responseText.trim() === 'loggedin') {
+                // User is logged in but not admin, redirect to user page
+                window.location.href = 'user_page.html';
+            } else {
+                // Redirect to the login page if not logged in
+                window.location.href = 'index.html';
+            }
+        }
+    };
+    xhr.open("GET", "check_login.php", true);
+    xhr.send();
+}
+window.onload = checkLogin;
+</script>
+
+
+<div class="container">
+    <div class="left-column">
+        <!-- Left column content (if any) goes here -->
+        <h1>Διαχειριστικό Σύστημα Εκπαιδευτή</h1>
+        <div id="logged-in-users">
+            <!-- This div will contain the list of logged-in users -->
+        </div> 
+    </div>
+    <div class="right-column">
+        <!-- Right column content (if any) goes here -->
+        <div class="welcome-message">
+            Καλώς Ήρθες, <strong>Admin</strong>
+        </div>
+        <!-- File Upload Section -->
+        <form action="upload_file.php" method="post" enctype="multipart/form-data">
+            <label for="fileToUpload">Select file to upload:</label>
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload File" name="submit">
+        </form>
+        <form action="logout.php" method="post">
+            <button type="submit" name="logout">Αποσύνδεση</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>

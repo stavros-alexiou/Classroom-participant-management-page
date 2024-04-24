@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
 <head>
   <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
   <title>Δίκτυο Εκπαιδεύσεως - Εγγραφή</title>
 </head>
 <body>
@@ -14,17 +14,23 @@
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
                         <input type="email" name="email" required>
-                        <label for="">Email</label>
+                        <label for="email">Email</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="password" required>
-                        <label for="">Κωδικός</label>
+                        <input type="password" id="password" name="password" required>
+                        <label for="password">Κωδικός</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="confirm_password" required>
-                        <label for="">Επανάληψη Κωδικού</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required>
+                        <label for="confirm_password">Επανάληψη Κωδικού</label>
+                    </div>
+
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="text" id="username" name="username" required>
+                        <label for="username">Εισάγετε το ονοματεπώνυμο σας</label>
                     </div>
                     <button type="submit">Εγγραφή</button>
                     <div class="register">

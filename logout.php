@@ -1,12 +1,6 @@
 <?php
 session_start();
-// Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "users_db";
-
-$conn = new mysqli($servername, $username, $password, $database);
+include 'db_connection.php'; // Use a separate file to handle DB connection
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -19,11 +13,15 @@ if(isset($_SESSION['email'])) {
     if ($conn->query($update_sql) === TRUE) {
         // Destroy the session data
         unset($_SESSION['email']);
-        echo "User logged out successfully.";
+        session_destroy();
+        header("Location: index.html");
+        exit();
     } else {
+	   
+
         echo "Error updating record: " . $conn->error;
     }
 }
-
+header("Location: index.html");
 $conn->close();
 ?>

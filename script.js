@@ -36,7 +36,7 @@ $(document).ready(function() {
     fetchLoggedInUsers();
     
     // Fetch and display logged-in users every 5 seconds (for real-time updates)
-    setInterval(fetchLoggedInUsers, 5000); // 5 seconds interval
+    //setInterval(fetchLoggedInUsers, 10000); // 5 seconds interval
 
     // Attach click event handler to the disconnect button
     $('#disconnect-btn').click(handleDisconnect);

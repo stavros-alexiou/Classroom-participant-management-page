@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('camouflage-2K.jpg') no-repeat;
+}
+
+.welcome-message{
+    display: flex;
+    justify-content: left;
+    right: 0px;
+    position: relative;
+}
+
+/* Create a two-column layout with a narrow right column */
+.container {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.left-column {
+    flex: 4; /* Takes 3/4th of the space */
+    /* You can style this column as needed or leave it empty as per your sketch */
+}
+
+.right-column {
+    flex: 1; /* Takes 1/4th of the space */
+    border-left: 1px solid #ccc; /* Separator line */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in the width */
+    position: relative; /* For absolute positioning of the dropdown menu */
+    border-right: 1px solid;
+    /* margin-bottom: 100px; */
+    background:  transparent;
+    backdrop-filter: blur(15px);
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: grid;
+    top: 20px;
+}
+
+/* Button styles */
+.button-link {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: left;
+    display: block;
+    width: 100%;
+    
+}
+
+.button-link:hover {
+    background-color: #f1f1f1;
+}
+
+/* Downloadable Content Styles */
+.content-area {
+    margin-top: 60px; /* Adjusted to move below the dropdown */
+}
+
+.content-area h2 {
+    margin-bottom: 10px;
+}
+
+/* Individual content link styles */
+.content-link {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    text-decoration: none;
+}
+
+.content-link:hover {
+    text-decoration: underline;
+}
+
+/* Logout button */
+.logout-button {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.welcome-message {
+    margin-right: 20px; /* Space between welcome message and dropdown */
+}
+
+#contentList {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#submit-button{
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+#button-link{
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+#toggleRaiseHand{
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}

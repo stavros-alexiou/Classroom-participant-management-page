@@ -40,10 +40,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `is_logged_in`, `raise_hand`, `is_admin`) VALUES
-(1, 'user1@example.com', 'p1', 0, 1, 0),
-(2, 'user2@example.com', 'p2', 0, 0, 0),
-(3, 'admin@gep.com', 'admin', 1, 0, 1);
+INSERT INTO `users` (`username`,`id`, `email`, `password`, `is_logged_in`, `raise_hand`, `is_admin`) VALUES
+("something",1, 'user1@example.com', 'p1', 0, 1, 0),
+("something",2, 'user2@example.com', 'p2', 0, 0, 0),
+("something",3, 'admin@gep.com', 'admin', 1, 0, 1);
 
 --
 -- Indexes for dumped tables

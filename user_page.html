@@ -1,17 +1,90 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="user_page.css">
+    <title>Σελίδα Χρήστη</title>
+    <script src="jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>Welcome to the Test Page</h1>
-    <form action="simple_user_logout.php" method="post">
-        <button type="submit" name="logout">Disconnect</button>
-    </form>
-    <button id="toggleRaiseHand">Raise Hand</button>
+<script>
+    var delay = 1000;
+    function showContent() {
+        document.body.style.display = 'block';
+    }
+    setTimeout(showContent, delay);
+
+    function checkLogin() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if (this.responseText.trim() === 'adminloggedin') {
+                    // User is logged in as admin, do nothing
+                } else if (this.responseText.trim() === 'loggedin') {
+                    // User is logged in but not admin
+                } else {
+                    // Redirect to the login page if not logged in
+                    window.location.href = 'index.html';
+                }
+            }
+        };
+        xhr.open("GET", "check_login.php", true);
+        xhr.send();
+    }
+    window.onload = checkLogin;
+
+    
+</script>
+
+<div class="container">
+    <div class="left-column">
+        <!-- Left column content (if any) goes here -->
+    </div>
+    <div class="right-column">
+        <div class="welcome-message">
+            Καλώς Ήρθες, <strong>User</strong>
+        </div>
+        <div class="dropdown">
+            <button id="toggleRaiseHand">Raise Hand</button> 
+            <button class="button-link" id="button-link" onclick="location.href='#settings';">
+                Ρυθμίσεις
+            </button>
+            <form action="logout.php" method="post">
+                <button type="submit" id="submit-button" name="logout" class="button-link">Αποσύνδεση</button>
+            </form>
+        </div>
+        <div class="content-area">
+            <h2>Κοινόχρηστα αρχεία</h2>
+            <div id="contentList">
+                <!-- Content links will be loaded here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    fetch('list_files.php')
+    .then(response => response.json())
+    .then(data => {
+        const contentList = document.getElementById('contentList');
+        data.forEach(file => {
+            const link = document.createElement('a');
+            const link1=file;
+            console.log(link);
+            link.href = 'Content_sharing/' + link1;
+            link.download = file;
+            link.textContent = file;
+            link.className = 'content-link';
+            contentList.appendChild(link);
+            console.log(link);
+        });
+    }).catch(error => console.error('Error loading the files:', error));
+});
+
+</script>
+
 </body>
 </html>

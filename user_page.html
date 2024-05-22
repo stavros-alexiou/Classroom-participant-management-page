@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<? php include 'classroom.php'; ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +8,11 @@
     <title>Σελίδα Χρήστη</title>
     <script src="jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
+    <script src="user_page.js"></script>
+
 </head>
 <body>
+
 <script>
     var delay = 1000;
     function showContent() {
@@ -34,32 +38,57 @@
         xhr.send();
     }
     window.onload = checkLogin;
-
-    
 </script>
 
 <div class="container">
-    <div class="left-column">
-        <!-- Left column content (if any) goes here -->
+    <div id="left-column" class="left-column">
+        <!-- Left column content (if any) goes here -->   
     </div>
+    
     <div class="right-column">
-        <div class="welcome-message">
-            Καλώς Ήρθες, <strong>User</strong>
-        </div>
-        <div class="dropdown">
-            <button id="toggleRaiseHand">Raise Hand</button> 
-            <button class="button-link" id="button-link" onclick="location.href='#settings';">
-                Ρυθμίσεις
-            </button>
-            <form action="logout.php" method="post">
-                <button type="submit" id="submit-button" name="logout" class="button-link">Αποσύνδεση</button>
-            </form>
-        </div>
-        <div class="content-area">
-            <h2>Κοινόχρηστα αρχεία</h2>
-            <div id="contentList">
-                <!-- Content links will be loaded here -->
+        
+        <div class="top-row">
+            
+            <div class="dropdown">
+                <button class="button-link" id="toggleRaiseHand">Σήκωσε Χέρι</button> 
+                <button class="button-link" id="button-link1" onclick="showButtons()">Επιλογη Αίθουσας</button>
+                <form action="logout.php" method="post">
+                    <button type="submit" id="submit-button" name="logout" class="button-link">Αποσύνδεση</button>
+                </form>
             </div>
+
+            <div id="Classes-container">
+                <button onclick="hideButtons()" value="Α" id="Aithousa-1" class="Classes">Α</button>  
+                <button onclick="hideButtons()" value="Β" id="Aithousa-2" class="Classes">Β</button>
+                <button onclick="hideButtons()" value="Γ" id="Aithousa-3" class="Classes">Γ</button>
+                <button onclick="hideButtons()" value="Ε" id="Aithousa-4" class="Classes">Ε</button>
+            </div>
+        </div>
+
+            <div class="white-line" id="white-line">
+            </div>
+
+            <div class="content-area">
+                <h2>Βοηθήματα Εκπαιδευτή</h2>
+                <div id="contentList">
+                    <!-- Content links will be loaded here -->
+                </div>
+            </div>
+
+        <div class="white-line" id="white-line">
+        </div>
+        
+        <h2>Αρχεία</h2>
+        <div class="Trainer Folder">
+            <button  id="Trainer-Folder" class="button-link" onclick="User_Shares()">Κοινοποιημένα Αρχεία</button>
+        </div>
+
+        <div class="bot-row">
+            
+            <form id="FileForm" action="upload_file.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="fileToUpload" id="fileToUpload" >
+                <input type="submit" value="Upload File" id="submit" name="submit" class="button-link">
+            </form>
         </div>
     </div>
 </div>

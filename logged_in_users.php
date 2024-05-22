@@ -14,20 +14,10 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         // Check raise_hand status and display notification mark accordingly
         $raise_hand_class = ($row['raise_hand'] == 1) ? 'raise-hand' : '';
-        echo "<li class='user $raise_hand_class'>" . $row['username'] . "</li>";
+        echo "<li class='user $raise_hand_class'>" . $row['username'] .  " "  . $row['class'] . "</li>";
     }
     echo "</ul>";
     echo "</div>";
-} else {
-    echo "No users are currently logged in.";
-}
-
-// Display the list of logged-in users
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<li>" . $row['email'] . "</li>";
-    }
-    echo "</ul>";
 } else {
     echo "No users are currently logged in.";
 }

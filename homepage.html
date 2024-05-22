@@ -53,12 +53,12 @@ window.onload = checkLogin;
             Καλώς Ήρθες, <strong>Admin</strong>
         </div>
         <!-- File Upload Section -->
-        <form action="upload_file.php" method="post" enctype="multipart/form-data">
+        <form id="FileForm" action="upload_file.php" method="post" enctype="multipart/form-data">
             <label for="fileToUpload">Select file to upload:</label>
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="submit" value="Upload File" name="submit">
         </form>
-        <form action="logout.php" method="post">
+        <form id="logout" action="logout.php" method="post">
             <button type="submit" name="logout">Αποσύνδεση</button>
         </form>
     </div>

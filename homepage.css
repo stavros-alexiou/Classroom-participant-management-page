@@ -12,6 +12,15 @@
     position: relative;
 }
 
+#FileForm{
+    display: flex;
+justify-content: flex-start;
+}
+
+#logout{
+    display: flex;
+    justify-content: flex-end;
+}
 /* Create a two-column layout with a narrow right column */
 .container {
     display: flex;

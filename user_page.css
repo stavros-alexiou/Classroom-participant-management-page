@@ -4,6 +4,8 @@ body {
     background: url('camouflage-2K.jpg') no-repeat;
 }
 
+
+
 .welcome-message{
     display: flex;
     justify-content: left;
@@ -22,94 +24,149 @@ body {
     /* You can style this column as needed or leave it empty as per your sketch */
 }
 
+
+
 .right-column {
     flex: 1; /* Takes 1/4th of the space */
+    display: flex;
     border-left: 1px solid #ccc; /* Separator line */
     padding: 20px;
     box-sizing: border-box; /* Include padding in the width */
     position: relative; /* For absolute positioning of the dropdown menu */
     border-right: 1px solid;
-    /* margin-bottom: 100px; */
     background:  transparent;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
+    flex-direction: column; 
+}
+
+.top-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height:15%;
+    width: 100%; /* Ensures the container takes full width of the right-column */
+    margin-bottom: 10px;
+    
 }
 
 /* Dropdown Menu Styles */
 .dropdown {
-    position: relative;
-    display: grid;
-    top: 20px;
+    display:grid;
+    grid-gap: 1px;
+    width: 100px; 
+    flex:1;
 }
+#Classes-container{
+    display: flex;
+    flex-direction: column;
+    width:100px;
+    height:20px;    
+    flex:1;
+}
+
+#Aithousa-1,#Aithousa-2,#Aithousa-3,#Aithousa-4{
+    display: none;
+}
+
+.Classes{
+    border-radius: 10px;
+    width:50px;
+    background-color: transparent;
+    cursor: pointer;
+    color: aquamarine;
+    border: 2px solid black;
+}
+.Classes:hover{
+    background:white;
+    color: black;
+}
+
 
 /* Button styles */
 .button-link {
-    border: none;
     background-color: transparent;
     cursor: pointer;
-    text-align: left;
-    display: block;
+    color: aquamarine;
+    height: 25px;
     width: 100%;
-    
+    display: flex;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
 .button-link:hover {
     background-color: #f1f1f1;
+    color: black;
+}
+
+.white-line{
+    display: flex;
+    position: relative;
+    width: 100%;
+    border: 1px solid white;
 }
 
 /* Downloadable Content Styles */
 .content-area {
-    margin-top: 60px; /* Adjusted to move below the dropdown */
-}
-
-.content-area h2 {
+    position:relative;
     margin-bottom: 10px;
 }
 
+h2 {
+    margin-bottom: 10px;
+    color: aquamarine;
+}
+
 /* Individual content link styles */
-.content-link {
+ .content-link {
     display: block;
     margin-bottom: 5px;
-    color: #333;
     text-decoration: none;
+    color : aquamarine;
 }
 
 .content-link:hover {
     text-decoration: underline;
-}
-
-/* Logout button */
-.logout-button {
-    text-align: right;
-    margin-top: 20px;
-}
-
-.welcome-message {
-    margin-right: 20px; /* Space between welcome message and dropdown */
+   
 }
 
 #contentList {
     border: 2px solid black;
     border-radius: 10px;
     padding: 15px;
+    margin-bottom: 20px;
+    
 }
 
-#submit-button{
+#usercontentList {
     border: 2px solid black;
     border-radius: 10px;
-    width: 50%;
-    text-align: center;
+    padding: 15px;
+    
+   
 }
 
-#button-link{
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 50%;
-    text-align: center;
+#Trainer-Folder{
+    margin-top: 5px;
 }
 
-#toggleRaiseHand{
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 50%;
-    text-align: center;
+.bot-row{
+    display:flex;
+    flex-direction: row;
 }
+
+#FileForm{
+    display:flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+#fileToUpload{
+   width:33%;
+   
+}
+#submit{
+    width: 33%;
+}
+
+

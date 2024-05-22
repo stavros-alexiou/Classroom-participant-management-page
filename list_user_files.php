@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$files = scandir('C:\xampp\htdocs\Content_sharing');
+$files = scandir('C:\xampp\htdocs\User_sharing');
 $result = [];
 
 foreach ($files as $file) {

@@ -15,18 +15,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['fileToUpload']) && $_
     $target_file = $target_dir . $filename;
 
     if ($file['size'] > 5000000) {
-        echo "Error: File is too large.";
+        echo "<script type=\"text/javascript\">window.alert('The file is too large');window.location.href = '/homepage.html';</script>";
         exit;
     }
 
 
     if (move_uploaded_file($file['tmp_name'], $target_file)) {
-        echo "The file " . htmlspecialchars($filename) . " has been uploaded.";
+        echo "<script type=\"text/javascript\">window.alert('The file " . htmlspecialchars($filename) . " has been uploaded.');window.location.href = '/homepage.html';</script>";
+
+         echo "The file " . htmlspecialchars($filename) . " has been uploaded.";
     } else {
-        echo "An error occurred trying to upload your file.";
+          echo "<script type=\"text/javascript\">window.alert('An error occurred trying to upload your file.');window.location.href = '/homepage.html';</script>";
+
     }
 } else {
-    echo "No file was uploaded or an error occurred.";
+     echo "<script type=\"text/javascript\">window.alert('No files where selected to be uploaded.');window.location.href = '/homepage.html';</script>";
+    
+
 }
 }
 else{
@@ -41,18 +46,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['fileToUpload']) && $_
     $target_file = $target_dir . $filename;
 
     if ($file['size'] > 5000000) {
-        echo "Error: File is too large.";
+        echo "<script type=\"text/javascript\">window.alert('The file is too large');window.location.href = '/user_page.html';</script>";
         exit;
     }
 
 
     if (move_uploaded_file($file['tmp_name'], $target_file)) {
-        echo "The file " . htmlspecialchars($filename) . " has been uploaded.";
+        echo "<script type=\"text/javascript\">window.alert('The file " . htmlspecialchars($filename) . " has been uploaded.');window.location.href = '/user_page.html';</script>";
     } else {
-        echo "An error occurred trying to upload your file.";
+        echo "<script type=\"text/javascript\">window.alert('An error occurred trying to upload your file.');window.location.href = '/user_page.html';</script>";
     }
 } else {
-    echo "No file was uploaded or an error occurred.";
+    echo "<script type=\"text/javascript\">window.alert('No files where selected to be uploaded.');window.location.href = '/user_page.html';</script>";
+
 }
 }
 

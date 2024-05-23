@@ -14,7 +14,8 @@
 
 #FileForm{
     display: flex;
-justify-content: flex-start;
+    position: relative;
+    
 }
 
 #logout{
@@ -44,9 +45,6 @@ justify-content: flex-start;
     backdrop-filter: blur(15px);
 }
 
-h1 {
-    text-align: center; /* Center align the heading */
-}
 
 .user-container {
     display: flex;
@@ -71,4 +69,56 @@ color:#fff;
     border-radius: 5px;
     margin: 5px; /* Add margin around each user */
     color:#fff;
+}
+
+label {
+    color:aquamarine;
+}
+
+
+.raise-hand {
+    background-color: rgb(197, 197, 0);
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    
+}
+
+h2 {
+    color: #fff;
+    text-align: left;
+    
+    
+}
+
+.white-line{
+    display: flex;
+    position: relative;
+    width: 100%;
+    border: 1px solid white;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+#Welcome{
+    margin-top: 0;
+    top:0;
+    position: relative;
+}
+
+#ConnectedUsers{
+    position: relative;
+    left:10px;
+}
+
+#logout{
+    justify-content: center;
+
+}
+#logoutButton{
+    position: relative;
+    display: flex;
+    
 }

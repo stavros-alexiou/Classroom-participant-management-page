@@ -75,3 +75,17 @@ $(document).ready(function() {
         updateClass(selectedValue);
     });
 });
+
+function showStream(){
+    if(document.getElementById("left-column").innerHTML === 'var vlc = document.createElement("a"); vlc.href = "vlc://rtsp://172.16.5.50:554/ch01"; vlc.click();' ){
+        document.getElementById("left-column").innerHTML='';
+        
+    }
+    else{
+        document.getElementById("left-column").innerHTML='var vlc = document.createElement("a"); vlc.href = "vlc://rtsp://172.16.5.50:554/ch01"; vlc.click();';
+    }
+    // var vlc = document.createElement("a");
+    //  vlc.href = "vlc://rtsp://172.16.5.50:554/ch01"; 
+    //  vlc.click();
+}
+{/* <source src="rtsp://172.16.5.50:554/ch01"></source> */}

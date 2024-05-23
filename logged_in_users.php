@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="index.css">
 <?php
 session_start();
 include 'db_connection.php'; // Use a separate file to handle DB connection}
@@ -8,7 +7,7 @@ $sql = "SELECT * FROM users WHERE is_logged_in = 1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<h2>Συνδεδεμένοι Χρήστες:</h2>";
+    echo "<h2 id='ConnectedUsers'>Συνδεδεμένοι Χρήστες:</h2>";
     echo "<div class='user-container'>";
     echo "<ul class='user-list'>";
     while ($row = $result->fetch_assoc()) {

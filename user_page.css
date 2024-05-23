@@ -4,8 +4,6 @@ body {
     background: url('camouflage-2K.jpg') no-repeat;
 }
 
-
-
 .welcome-message{
     display: flex;
     justify-content: left;
@@ -169,4 +167,7 @@ h2 {
     width: 33%;
 }
 
-
+#player{
+    width: 100%;
+    height: 99%;
+}

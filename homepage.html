@@ -43,24 +43,31 @@ window.onload = checkLogin;
     <div class="left-column">
         <!-- Left column content (if any) goes here -->
         <h1>Διαχειριστικό Σύστημα Εκπαιδευτή</h1>
+        <!-- <div class="white-line" id="white-line"></div> -->
+
         <div id="logged-in-users">
             <!-- This div will contain the list of logged-in users -->
         </div> 
     </div>
     <div class="right-column">
-        <!-- Right column content (if any) goes here -->
-        <div class="welcome-message">
-            Καλώς Ήρθες, <strong>Admin</strong>
-        </div>
         <!-- File Upload Section -->
+        <h1 id="Welcome">Καλωσήρθες</h1>
+        <div class="white-line" id="white-line"></div>
+        <h1 id="Welcome">Ανέβασμα Αρχείων</h1>
         <form id="FileForm" action="upload_file.php" method="post" enctype="multipart/form-data">
             <label for="fileToUpload">Select file to upload:</label>
             <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload File" name="submit">
+            <input id="submit" type="submit" value="Ανέβασε" name="submit">
         </form>
+        <div class="white-line" id="white-line"></div>
+        <h1 id="Welcome">Λειτουργίες Χρήστη</h1>
+
+
         <form id="logout" action="logout.php" method="post">
-            <button type="submit" name="logout">Αποσύνδεση</button>
+            <button id="logoutButton"type="submit" name="logout">Αποσύνδεση</button>
         </form>
+        <div class="white-line" id="white-line"></div>
+
     </div>
 </div>
 </body>
